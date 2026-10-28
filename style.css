@@ -213,7 +213,7 @@ nav a:hover {
         gap: 30px;
     }
 
-    .banner-conteudo h2 {
+    .banner-conteudo h1 {
         font-size: 32px;
     }
 
@@ -236,7 +236,7 @@ nav a:hover {
 /* Ajustes para celulares bem estreitos */
 @media (max-width: 400px) {
 
-    .banner-conteudo h2 {
+    .banner-conteudo h1 {
         font-size: 28px;
     }
 
