@@ -30,6 +30,7 @@ html {
    com um pequeno respiro */
 #empresa {
     scroll-margin-top: 20px;
+    
 }
 
 
@@ -52,7 +53,7 @@ header {
 
 /* CABEÇALHO REDUZIDO DURANTE A ROLAGEM */
 header.header-reduzido {
-    padding: 6px 5%;
+    padding: 16px 5%;
 }
 
 
@@ -479,10 +480,10 @@ nav a:focus-visible {
     margin: 5px 0;
     font-size: 14px;
     line-height: 1.6;
+    color: var(--azul-gelo);
 }
 
 .rodape p+p {
-    color: var(--azul-gelo);
     font-size: 13px;
 }
 
@@ -672,7 +673,7 @@ nav a:focus-visible {
 
     /* Rodapé */
     .rodape {
-        padding: 22px 5%;
+        padding: 22px 5% 80px;
     }
 }
 
