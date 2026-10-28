@@ -6,6 +6,9 @@
     --laranja-claro: #F7BE74;
     --azul-gelo: #DCE7F2;
     --branco: #FFFFFF;
+
+    /* Valor de reserva: o script.js mede a altura real do cabeçalho
+       e sobrescreve esta variável automaticamente */
     --altura-header: 93px;
 }
 
@@ -19,10 +22,14 @@ body {
     background-color: var(--branco);
 }
 
-
 html {
     scroll-padding-top: var(--altura-header);
+}
 
+/* Ao clicar em "A Empresa", o título (id no h2) para logo abaixo do cabeçalho,
+   com um pequeno respiro */
+#empresa {
+    scroll-margin-top: 20px;
 }
 
 
@@ -48,17 +55,27 @@ header.header-reduzido {
     padding: 6px 5%;
 }
 
-/* NOME DA EMPRESA */
 
-header h1 {
-    margin: 0;
-    font-size: 26px;
-    transition: font-size 0.25s ease;
+/* LOGO DA PWR CONSTRUTORA */
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-header.header-reduzido h1 {
-    font-size: 22px;
+.logo {
+    display: block;
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: width 0.25s ease;
 }
+
+header.header-reduzido .logo {
+    width: 115px;
+}
+
 
 /* MENU DE NAVEGAÇÃO */
 
@@ -84,6 +101,15 @@ nav a {
 nav a:hover {
     color: var(--laranja-principal);
 }
+
+/* ACESSIBILIDADE: NAVEGAÇÃO PELO TECLADO */
+
+nav a:focus-visible {
+    outline: 2px solid var(--laranja-claro);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 
 /* BANNER PRINCIPAL */
 
@@ -117,6 +143,8 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+
+/* SEÇÃO "A EMPRESA" */
 
 .frase-destaque {
     margin-top: 30px;
@@ -213,84 +241,10 @@ nav a:hover {
 }
 
 
-/* ADAPTAÇÃO PARA CELULARES E TELAS ESTREITAS */
-@media (max-width: 768px) {
-    :root {
-        --altura-header: 170px; /* ajuste com o valor medido */
-    }
-
-    /* Cabeçalho e menu */
-    header {
-        flex-direction: column;
-        gap: 12px;
-        padding: 10px 5%;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    /* Banner: texto em cima e fotos abaixo */
-    .banner {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 40px 5%;
-        gap: 30px;
-    }
-
-    .banner-conteudo h1 {
-        font-size: 32px;
-    }
-
-    .banner-conteudo p {
-        font-size: 16px;
-    }
-
-    /* Fotos lado a lado, sem comprimir o banner */
-    .banner-imagens {
-        width: 100%;
-        flex: none;
-        gap: 10px;
-    }
-
-    .obra-foto img {
-        height: 220px;
-    }
-
-    header.header-reduzido {
-    padding: 6px 5%;
-}
-
-header.header-reduzido .logo {
-    width: 100px;
-}
-}
-
-/* Ajustes para celulares bem estreitos */
-@media (max-width: 400px) {
-
-    .banner-conteudo h1 {
-        font-size: 28px;
-    }
-
-    .banner-imagens {
-        grid-template-columns: 1fr;
-    }
-
-    .obra-foto img {
-        height: auto;
-        aspect-ratio: 4 / 3;
-    }
-}
-
-
 /* SEÇÃO NOSSAS SOLUÇÕES */
 .secao-servicos {
     padding: 70px 6%;
     background-color: var(--azul-gelo);
-    
 }
 
 /* INTRODUÇÃO DA SEÇÃO */
@@ -298,7 +252,6 @@ header.header-reduzido .logo {
     max-width: 750px;
     margin: 0 auto 40px;
     text-align: center;
-    
 }
 
 .servicos-introducao h2 {
@@ -350,39 +303,11 @@ header.header-reduzido .logo {
     box-shadow: 0 8px 22px rgba(40, 50, 72, 0.15);
 }
 
-/* TABLETS */
-@media (max-width: 900px) {
-    .servicos-lista {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* CELULARES */
-@media (max-width: 600px) {
-    .secao-servicos {
-        padding: 45px 5%;
-    }
-
-    .servicos-introducao h2 {
-        font-size: 28px;
-    }
-
-    .servicos-lista {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .servico-card {
-        padding: 24px 20px;
-    }
-}
-
 
 /* SEÇÃO PROJETOS E OBRAS */
 .secao-projetos {
     padding: 70px 6%;
     background-color: var(--branco);
-    
 }
 
 /* INTRODUÇÃO */
@@ -460,32 +385,6 @@ header.header-reduzido .logo {
     line-height: 1.7;
 }
 
-/* CELULARES */
-@media (max-width: 600px) {
-    .secao-projetos {
-        padding: 45px 5%;
-    }
-
-    .projetos-introducao h2 {
-        font-size: 28px;
-    }
-
-    .projeto-imagens {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 12px;
-    }
-
-    .projeto-imagens img {
-        height: 240px;
-    }
-
-    .projeto-conteudo {
-        padding: 8px 20px 24px;
-
-    }
-}
-
 
 /* SEÇÃO DE CONTATO */
 .secao-contato {
@@ -493,7 +392,6 @@ header.header-reduzido .logo {
     background-color: var(--azul-escuro);
     color: var(--branco);
     text-align: center;
-    
 }
 
 /* CONTEÚDO DO CONTATO */
@@ -539,23 +437,6 @@ header.header-reduzido .logo {
     outline-offset: 4px;
 }
 
-/* CELULARES */
-@media (max-width: 600px) {
-    .secao-contato {
-        padding: 50px 5%;
-    }
-
-    .contato-conteudo h2 {
-        font-size: 27px;
-    }
-
-    .botao-whatsapp {
-        padding: 15px 20px;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-}
-
 
 /* RODAPÉ */
 .rodape {
@@ -576,35 +457,14 @@ header.header-reduzido .logo {
     font-size: 13px;
 }
 
-/* AJUSTE PARA CELULARES */
-@media (max-width: 600px) {
-    .rodape {
-        padding: 22px 5%;
-    }
-}
 
+/* ==========================================================
+   RESPONSIVIDADE
+   (todas as media queries ficam depois das regras base,
+   para que sempre sobrescrevam corretamente)
+   ========================================================== */
 
-/* LOGO DA PWR CONSTRUTORA */
-.logo-link {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.logo {
-    display: block;
-    width: 150px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-        transition: width 0.25s ease;
-}
-
-header.header-reduzido .logo {
-    width: 115px;
-}
-
-/* Desktop Grande */
+/* Desktop grande */
 @media (min-width: 1200px) {
     .secao-inicial {
         background-position: center center;
@@ -612,7 +472,7 @@ header.header-reduzido .logo {
     }
 }
 
-/* Notebook e Tablet Horizontal */
+/* Notebook e tablet horizontal */
 @media (max-width: 1199px) {
     .secao-inicial {
         background-position: center top;
@@ -620,11 +480,72 @@ header.header-reduzido .logo {
     }
 }
 
-/* Tablet Vertical */
+/* Tablets */
+@media (max-width: 900px) {
+    .servicos-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Tablet vertical e celulares */
 @media (max-width: 768px) {
+    :root {
+        /* Apenas valor de reserva; o script.js mede a altura real */
+        --altura-header: 170px;
+    }
+
+    /* Cabeçalho e menu */
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 5%;
+    }
+
+    header.header-reduzido {
+        padding: 6px 5%;
+    }
+
+    header.header-reduzido .logo {
+        width: 100px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Banner: texto em cima e fotos abaixo */
+    .banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 40px 5%;
+        gap: 30px;
+    }
+
+    .banner-conteudo h1 {
+        font-size: 32px;
+    }
+
+    .banner-conteudo p {
+        font-size: 16px;
+    }
+
+    /* Fotos lado a lado, sem comprimir o banner */
+    .banner-imagens {
+        width: 100%;
+        flex: none;
+        gap: 10px;
+    }
+
+    .obra-foto img {
+        height: 220px;
+    }
+
+    /* Seção "A Empresa" */
     .secao-inicial {
         background-position: center top;
-        padding: 80px 30px;
+        padding: 60px 6%;
     }
 
     .secao-inicial h2 {
@@ -636,13 +557,89 @@ header.header-reduzido .logo {
     }
 }
 
-/* iPhone e Smartphones */
+/* Celulares */
+@media (max-width: 600px) {
+    /* Serviços */
+    .secao-servicos {
+        padding: 45px 5%;
+    }
+
+    .servicos-introducao h2 {
+        font-size: 28px;
+    }
+
+    .servicos-lista {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .servico-card {
+        padding: 24px 20px;
+    }
+
+    /* Projetos */
+    .secao-projetos {
+        padding: 45px 5%;
+    }
+
+    .projetos-introducao h2 {
+        font-size: 28px;
+    }
+
+    .projeto-imagens {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .projeto-imagens img {
+        height: 240px;
+    }
+
+    .projeto-conteudo {
+        padding: 8px 20px 24px;
+    }
+
+    /* Contato */
+    .secao-contato {
+        padding: 50px 5%;
+    }
+
+    .contato-conteudo h2 {
+        font-size: 27px;
+    }
+
+    .botao-whatsapp {
+        padding: 15px 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Rodapé */
+    .rodape {
+        padding: 22px 5%;
+    }
+}
+
+/* Celulares bem estreitos */
 @media (max-width: 480px) {
+    .banner-conteudo h1 {
+        font-size: 28px;
+    }
+
+    .banner-imagens {
+        grid-template-columns: 1fr;
+    }
+
+    .obra-foto img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
     .secao-inicial {
         background-position: center top;
         background-size: cover;
-
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
 
     .secao-inicial h2 {
