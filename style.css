@@ -490,8 +490,10 @@ nav a:focus-visible {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 18px;
+    gap: 12px 24px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(220, 231, 242, 0.2);
 }
 
 .rodape-links a {
