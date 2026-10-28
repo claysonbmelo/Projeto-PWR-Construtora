@@ -437,6 +437,34 @@ nav a:focus-visible {
     outline-offset: 4px;
 }
 
+/* BOTÃO WHATSAPP FLURUANTE. */
+.caixa-link-whatsapp {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+}
+
+.link-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    /*background-color: #25D366;*/
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.link-whatsapp img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+}
+
+.link-whatsapp:hover {
+    transform: scale(1.08);
+}
 
 /* RODAPÉ */
 .rodape {
@@ -656,5 +684,17 @@ nav a:focus-visible {
     .secao-inicial li {
         font-size: 0.95rem;
         line-height: 1.7;
+    }
+}
+
+@media (max-width: 360px) {
+    .link-whatsapp {
+        width: 48px;
+        height: 48px;
+    }
+
+    .link-whatsapp img {
+        width: 38px;
+        height: 38px;
     }
 }
