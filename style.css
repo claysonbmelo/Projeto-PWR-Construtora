@@ -30,7 +30,7 @@ html {
    com um pequeno respiro */
 #empresa {
     scroll-margin-top: 20px;
-    
+
 }
 
 
@@ -55,6 +55,13 @@ header {
 header.header-reduzido {
     padding: 16px 5%;
 }
+
+/* ESTILO DO LINK ATIVO */
+nav a[aria-current="location"] {
+  color: var(--laranja-claro);
+  font-weight: 700;
+}
+
 
 
 /* LOGO DA PWR CONSTRUTORA */
@@ -157,10 +164,8 @@ nav a:focus-visible {
 
 .secao-inicial {
     background-image:
-        linear-gradient(
-            rgba(0, 24, 58, 0.45),
-            rgba(0, 24, 58, 0.45)
-        ),
+        linear-gradient(rgba(0, 24, 58, 0.45),
+            rgba(0, 24, 58, 0.45)),
         url("./assets/predio2.webp");
 
     background-size: cover;
@@ -615,6 +620,7 @@ nav a:focus-visible {
 
 /* Celulares */
 @media (max-width: 600px) {
+
     /* Serviços */
     .secao-servicos {
         padding: 45px 5%;
@@ -715,9 +721,9 @@ nav a:focus-visible {
     }
 
     .link-whatsapp img {
-    width: 44px;
-    height: 44px;
-}
+        width: 44px;
+        height: 44px;
+    }
 }
 
 @media (max-width: 360px) {

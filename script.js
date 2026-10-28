@@ -27,4 +27,39 @@ function atualizarHeader() {
 window.addEventListener("scroll", atualizarHeader, { passive: true });
 atualizarHeader();
 
-    
+
+const secoes = document.querySelectorAll(
+  "#inicio, #empresa, #servicos, #projetos, #contato"
+);
+
+const linksMenu = document.querySelectorAll(
+  'nav a[href^="#"]'
+);
+
+const observador = new IntersectionObserver(
+  (entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        linksMenu.forEach((link) => {
+          const ativo =
+            link.getAttribute("href") ===
+            `#${entrada.target.id}`;
+
+          if (ativo) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+    });
+  },
+  {
+    rootMargin: "-20% 0px -65% 0px"
+  }
+);
+
+secoes.forEach((secao) => {
+  observador.observe(secao);
+});
+
