@@ -6,6 +6,7 @@
     --laranja-claro: #F7BE74;
     --azul-gelo: #DCE7F2;
     --branco: #FFFFFF;
+    --altura-header: 93px;
 }
 
 
@@ -20,7 +21,8 @@ body {
 
 
 html {
-    scroll-padding-top:93px;
+    scroll-padding-top: var(--altura-header);
+
 }
 
 
@@ -186,8 +188,8 @@ nav a:hover {
 
 /* ADAPTAÇÃO PARA CELULARES E TELAS ESTREITAS */
 @media (max-width: 768px) {
-    html {
-        scroll-padding-top: 15px;
+    :root {
+        --altura-header: 170px; /* ajuste com o valor medido */
     }
 
     /* Cabeçalho e menu */
@@ -224,11 +226,6 @@ nav a:hover {
         width: 100%;
         flex: none;
         gap: 10px;
-    }
-
-    #empresa {
-        padding: 45px 5%;
-        scroll-margin-top: 85px;
     }
 
     .obra-foto img {
