@@ -442,6 +442,7 @@ nav a:focus-visible {
     position: fixed;
     right: 16px;
     bottom: 16px;
+    z-index: 1100;
 }
 
 .link-whatsapp {
@@ -483,6 +484,30 @@ nav a:focus-visible {
 .rodape p+p {
     color: var(--azul-gelo);
     font-size: 13px;
+}
+
+.rodape-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 18px;
+}
+
+.rodape-links a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: var(--laranja-claro);
+}
+
+.rodape-links a:focus-visible {
+    outline: 2px solid var(--laranja-claro);
+    outline-offset: 4px;
 }
 
 
@@ -685,6 +710,11 @@ nav a:focus-visible {
         font-size: 0.95rem;
         line-height: 1.7;
     }
+
+    .link-whatsapp img {
+    width: 44px;
+    height: 44px;
+}
 }
 
 @media (max-width: 360px) {
