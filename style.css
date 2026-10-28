@@ -138,7 +138,7 @@ nav a:hover {
 }
 
 .botao-principal:hover {
-    background-color: var(--laranja-principal);
+    background-color: var(--laranja-secundario);
 }
 
 .botao-secundario {
