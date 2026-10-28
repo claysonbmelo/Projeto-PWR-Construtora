@@ -67,7 +67,7 @@ nav a:hover {
 }
 
 .secao-inicial {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 90px;
 }
 
 /* BANNER PRINCIPAL */
@@ -239,7 +239,7 @@ nav a:hover {
 .secao-servicos {
     padding: 70px 6%;
     background-color: var(--azul-gelo);
-    scroll-margin-top: 100px;
+    scroll-margin-top: 90px;
 }
 
 /* INTRODUÇÃO DA SEÇÃO */
@@ -331,7 +331,7 @@ nav a:hover {
 .secao-projetos {
     padding: 70px 6%;
     background-color: var(--branco);
-    scroll-margin-top: 100px;
+    scroll-margin-top: 80px;
 }
 
 /* INTRODUÇÃO */
@@ -442,7 +442,7 @@ nav a:hover {
     background-color: var(--azul-escuro);
     color: var(--branco);
     text-align: center;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 80px;
 }
 
 /* CONTEÚDO DO CONTATO */
