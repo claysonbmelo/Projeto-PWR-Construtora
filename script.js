@@ -6,4 +6,14 @@ window.addEventListener("scroll", () => {
         "header-reduzido",
         window.scrollY > 50
     );
+
+    new ResizeObserver(() => {
+        document.documentElement.style.setProperty(
+            '--altura-header',
+            header.offsetHeight + 'px'
+        );
+    }).observe(header);
 });
+
+
+    
