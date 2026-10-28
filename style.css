@@ -31,7 +31,7 @@ html {
 header {
     background-color: var(--azul-escuro);
     color: var(--branco);
-    padding: 20px 6%;
+    padding: 12px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,6 +39,13 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    transition: padding 0.25s ease;
+}
+
+/* CABEÇALHO REDUZIDO DURANTE A ROLAGEM */
+header.header-reduzido {
+    padding: 6px 5%;
 }
 
 /* NOME DA EMPRESA */
@@ -46,6 +53,11 @@ header {
 header h1 {
     margin: 0;
     font-size: 26px;
+    transition: font-size 0.25s ease;
+}
+
+header.header-reduzido h1 {
+    font-size: 22px;
 }
 
 /* MENU DE NAVEGAÇÃO */
@@ -195,8 +207,8 @@ nav a:hover {
     /* Cabeçalho e menu */
     header {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px 5%;
+        gap: 12px;
+        padding: 10px 5%;
     }
 
     nav ul {
@@ -231,6 +243,14 @@ nav a:hover {
     .obra-foto img {
         height: 220px;
     }
+
+    header.header-reduzido {
+    padding: 6px 5%;
+}
+
+header.header-reduzido .logo {
+    width: 100px;
+}
 }
 
 /* Ajustes para celulares bem estreitos */
@@ -562,5 +582,11 @@ nav a:hover {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+        transition: width 0.25s ease;
 }
+
+header.header-reduzido .logo {
+    width: 115px;
+}
+
 
