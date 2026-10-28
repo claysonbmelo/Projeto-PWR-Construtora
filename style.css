@@ -129,10 +129,10 @@ nav a:hover {
 .secao-inicial {
     background-image:
         linear-gradient(
-            rgba(0, 24, 58, 0.65),
-            rgba(0, 24, 58, 0.65)
+            rgba(0, 24, 58, 0.45),
+            rgba(0, 24, 58, 0.45)
         ),
-        url("./assets/predio2.jpg");
+        url("./assets/predio2.webp");
 
     background-size: cover;
     background-position: center;
@@ -604,4 +604,60 @@ header.header-reduzido .logo {
     width: 115px;
 }
 
+/* Desktop Grande */
+@media (min-width: 1200px) {
+    .secao-inicial {
+        background-position: center center;
+        padding: 120px 12%;
+    }
+}
 
+/* Notebook e Tablet Horizontal */
+@media (max-width: 1199px) {
+    .secao-inicial {
+        background-position: center top;
+        padding: 100px 8%;
+    }
+}
+
+/* Tablet Vertical */
+@media (max-width: 768px) {
+    .secao-inicial {
+        background-position: center top;
+        padding: 80px 30px;
+    }
+
+    .secao-inicial h2 {
+        font-size: 2rem;
+    }
+
+    .secao-inicial h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* iPhone e Smartphones */
+@media (max-width: 480px) {
+    .secao-inicial {
+        background-position: center top;
+        background-size: cover;
+
+        padding: 60px 20px;
+    }
+
+    .secao-inicial h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .secao-inicial h3 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .secao-inicial p,
+    .secao-inicial li {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
