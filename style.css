@@ -20,7 +20,7 @@ body {
 
 
 html {
-    scroll-padding-top: 28px;
+    scroll-padding-top: 0px;
 }
 
 
@@ -101,11 +101,6 @@ nav a:hover {
     line-height: 1.7;
     color: #E0E7F0;
     margin-bottom: 30px;
-}
-
-#empresa {
-    padding: 50px 6%;
-    scroll-margin-top: 220px;
 }
 
 
@@ -191,6 +186,9 @@ nav a:hover {
 
 /* ADAPTAÇÃO PARA CELULARES E TELAS ESTREITAS */
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 220px;
+    }
 
     /* Cabeçalho e menu */
     header {
@@ -230,7 +228,7 @@ nav a:hover {
 
     #empresa {
         padding: 35px 5%;
-        /*scroll-margin-top: 50px;*/
+        scroll-margin-top: 0px;
     }
 
     .obra-foto img {
